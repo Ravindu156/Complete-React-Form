@@ -4,10 +4,20 @@ import {useState} from "react";
 
 
 function App() {
-  const[firstName,setFirstname]=useState("");
+  const[firstName,setFirstName]=useState("");
   const[lastName,setLastName]=useState("");
   const[email,setEmail]=useState("");
   const[contact,setContact]=useState("");
+  const[gender,setGender]=useState("");
+  const [subjects,setSubjects]=useState({
+    english:true,
+    maths:false,
+    physics:false,
+  });
+  const [resume,setResume]=useState("");
+  const [url,setUrl]=useState();
+  const [selectedOption,setSelectedOption]=useState("");
+  const [about,setAbout]=useState("");
 
   return (
     <div className="App">
@@ -16,42 +26,47 @@ function App() {
         <form action='#' method="get">
           {/*Name */}
           <label for="firstname">First Name</label>
-            <input type="text" name="firstname" id="firstname" value={firstName}/>
+            <input type="text" name="firstname" id="firstname" value={firstName} onChange={(e)=>setFirstName(e.target.value)}/>
           
-          <label for="lastname">Firt Name</label>
-             <input type="text" name="lastname" id="firstname" value={lastName}/>
+          <label for="lastname">Last Name</label>
+             <input type="text" name="lastname" id="firstname" value={lastName} onChange={(e)=>setLastName(e.target.value)}/>
 
              {/*Email */}
           <label for="email">Email</label>
-             <input type="email" name="email" id="email" value={email}/>
+             <input type="email" name="email" id="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
 
 
             {/*Contact Number */}
           <label for="contact">Contact</label>
-             <input type="tel" name="email" id="email" value={contact}/>
+             <input type="tel" name="contact" id="contact" value={contact} onChange={(e)=>setContact(e.target.value)}/>
 
 
           
             {/*Gender */}
           <label for="gender">Gender</label>
             <input type="radio" name="gender" value="male" id="male" checked={gender==="male"}
-            onChange={}/>Male
+            />Male
               <input type="radio" name="gender" value="female" id="female" checked={gender==="female"}
-            onChange={}/>Female
+            />Female
                   <input type="radio" name="gender" value="other" id="other" checked={gender==="other"}
-            onChange={}/>Other
+            />Other
 
             <label for="lang">  
                         Your best Subject
             </label>
             <input type="checkbox" name="lang" id="english" checked={subjects.english===true}/>English
-            <input type="checkbox" name="lang" id="maths" checked={subjects.english===true}/>English
-            <input type="checkbox" name="lang" id="physics" checked={subjects.english===true}/>English
+            <input type="checkbox" name="lang" id="maths" checked={subjects.maths===true}/>Maths
+            <input type="checkbox" name="lang" id="physics" checked={subjects.physics===true}/>physics
+
+            <label for="file">Upload Resume</label>
+            <input type="file" name="file" id="file" ></input>
+
 
             <label for="url">Enter URL</label>
             <input type="url" name="url" id="url" />
 
             <label>Select Your Choice</label>
+            <select name="select" id="select" value={selectedOption}>
             <option value="" disabled selected={selectedOption===""}>Select Your Answer</option>
 
 
@@ -68,7 +83,21 @@ function App() {
               <option value="t">MongoDB</option>
             </optgroup>
 
+</select>
 
+<label for="about">About</label>
+<textarea
+  name="about"
+  id="about"
+  cols="30"
+  rows="10"
+  onChnage={(e)=>{
+    setAbout(e.target.value)
+  }}
+
+
+
+></textarea>
 
 
             
