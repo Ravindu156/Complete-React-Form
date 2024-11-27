@@ -49,6 +49,10 @@ function App() {
             <input type="checkbox" name="lang" id="physics" checked={subjects.english===true}/>English
 
             <label for="url">Enter URL</label>
+            <input type="url" name="url" id="url" />
+
+
+            <option value=""
             
 
 
