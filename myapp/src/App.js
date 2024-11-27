@@ -38,12 +38,18 @@ function App() {
             onChange={}/>Male
               <input type="radio" name="gender" value="female" id="female" checked={gender==="female"}
             onChange={}/>Female
-                  <input type="radio" name="gender" value="female" id="female" checked={gender==="female"}
+                  <input type="radio" name="gender" value="other" id="other" checked={gender==="other"}
             onChange={}/>Other
 
             <label for="lang">  
                         Your best Subject
             </label>
+            <input type="checkbox" name="lang" id="english" checked={subjects.english===true}/>English
+            <input type="checkbox" name="lang" id="maths" checked={subjects.english===true}/>English
+            <input type="checkbox" name="lang" id="physics" checked={subjects.english===true}/>English
+
+            <label for="url">Enter URL</label>
+            
 
 
 
