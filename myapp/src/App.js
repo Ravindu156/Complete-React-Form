@@ -52,7 +52,20 @@ function App() {
             <input type="url" name="url" id="url" />
 
 
-            <option value=""
+            <option value="" disabled selected={selectedOption===""}>Select Your Answer</option>
+
+
+            <optgroup label="Beginers">
+              <option value="1">HTML</option>
+              <option value="2">CSS</option>
+              <option value="3">JavaScript</option>
+            </optgroup>
+            
+
+            
+
+
+
             
 
 
