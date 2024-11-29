@@ -19,6 +19,45 @@ function App() {
   const [selectedOption,setSelectedOption]=useState("");
   const [about,setAbout]=useState("");
 
+const handleSubmit=(e)=>{
+  e.preventDefault();
+  console.log(
+    firstName,
+    lastName,
+    email,
+    contact,
+    selectedOption,
+    subjects,
+    resume,
+    url,
+    about
+
+  );
+}
+
+const handleSubjectChange=(sub)=>{
+  setSubjects((prev)=>({
+    ...prev,
+    [sub]:!prev[sub],
+  }))
+}
+
+const handleReset=()=>{
+  setFirstName("");
+  setLastName("");
+  setEmail("");
+  setContact("");
+  setGender("male");
+  setSubjects({
+    english:true,
+    maths:false,
+    physics:false,
+  })
+};
+
+
+
+
   return (
     <div className="App">
       <h1>Form in React</h1>
@@ -95,12 +134,15 @@ function App() {
     setAbout(e.target.value)
   }}
 
-
-
 ></textarea>
 
+<button type="reset" value="reset" onClick={()=>handleReset()}>
+  Reset
+</button>
 
-            
+<button type="submit" value="submit" onClick={(e)=>handleSubmit(e)}>
+  Submit
+</button>
 
 
 
