@@ -52,7 +52,11 @@ const handleReset=()=>{
     english:true,
     maths:false,
     physics:false,
-  })
+  });
+  setResume("");
+  setUrl("");
+  setSelectedOption("");
+  setAbout("");
 };
 
 
