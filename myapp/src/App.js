@@ -102,11 +102,11 @@ const handleReset=()=>{
             <input type="checkbox" name="lang" id="physics" checked={subjects.physics===true} onChange={(e)=>handleSubjectChange("physics")}/>physics
 
             <label for="file">Upload Resume</label>
-            <input type="file" name="file" id="file" onChange={(e)=>handle}></input>
+            <input type="file" name="file" id="file" onChange={(e)=>setResume(e.target.files[0])}></input>
 
 
             <label for="url">Enter URL</label>
-            <input type="url" name="url" id="url" />
+            <input type="url" name="url" id="url" onChange={(e)=>setUrl(e.target.value)} />
 
             <label>Select Your Choice</label>
             <select name="select" id="select" value={selectedOption}>
